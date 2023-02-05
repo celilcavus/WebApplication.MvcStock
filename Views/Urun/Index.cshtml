@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<MvcStock.Models.Entity.TblUrunler>
+
+
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>URUN ADI</th>
+                <th>MARKA</th>
+                <th>STOK</th>
+                <th>ALIS FİYAT</th>
+                <th>SATIS FİYAT</th>
+                <th>KATEGORI ADI</th>
+                <th>SIL</th>
+                <th>GUNCELLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.ad</td>
+                    <td>@item.marka</td>
+                    <td>@item.stock</td>
+                    <td>@item.alisfiyat</td>
+                    <td>@item.satisfiyat</td>
+                    <td>@item.TblKategori.ad</td>
+                    <td><a href="/Urun/Sil/@item.Id" class="btn btn-sm btn-danger">Sil</a></td>
+                    <td><a href="/Urun/Guncelle/@item.Id" class="btn btn-sm btn-warning">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Urun/YeniUrun" class="btn btn-info text-light">Yeni Urun</a>

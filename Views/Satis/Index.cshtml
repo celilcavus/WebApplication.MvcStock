@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<MvcStock.Models.Entity.TblSatis>
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>URUN ADI</th>
+            <th>PERSONEL ADI</th>
+            <th>MÜŞTERİ ADI</th>
+            <th>FİYAT</th>
+            <th>TARİH</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.TblUrunler.ad</td>
+                <td>@item.TblPersonel.ad</td>
+                <td>@item.TblMusteri.ad</td>
+                <td>@item.fiyat</td>
+                <td>@item.tarih</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<a href="/Satis/YeniSatis" class="btn btn-info text-light">Yeni Satiş</a>
+
+

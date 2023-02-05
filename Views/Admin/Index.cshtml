@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@model List<MvcStock.Models.Entity.TblAdmin>
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Şifre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.kullaniciAdi</td>
+                <td>@item.sifre.Replace(item.sifre.Substring(0, item.sifre.Length-2), "*****")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Admin/YeniAdmin" class="btn btn-info text-light">Yeni Admin</a>
+

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MvcStock.Models.Entity.TblKategori
+@using (Html.BeginForm("Guncelle","Kategori",FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+    <h2> Kategori Guncelleme</h2>
+    <br />
+    <label>Kategori Adınızı Giriniz</label>
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-dark" type="submit">Guncelle!</button>
+}
+

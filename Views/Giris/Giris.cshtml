@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+@model MvcStock.Models.Entity.TblAdmin
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giris</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        @using (Html.BeginForm("Giris", "Giris", FormMethod.Post))
+        {
+            @Html.Label("Kullanıcı Adı")
+            @Html.TextBoxFor(x => x.kullaniciAdi, new { @class = "form-control" })
+            <br />
+            @Html.Label("Şifre")
+            @Html.TextBoxFor(x => x.sifre, new { @class = "form-control",@type="password"})
+            <br />
+            <button type="submit" class="btn btn-dark">Giris</button>
+        }
+    </div>
+</body>
+</html>

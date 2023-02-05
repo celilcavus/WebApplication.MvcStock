@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MvcStock.Models.Entity.TblSatis
+@using (Html.BeginForm("YeniSatis", "Satis", FormMethod.Post))
+{
+    @Html.Label("Urun Adı")
+    @Html.DropDownListFor(x => x.urunid, (List<SelectListItem>)ViewBag.urunList, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel Adı")
+    @Html.DropDownListFor(x => x.personelid, (List<SelectListItem>)ViewBag.personelList, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Müşteri Adı")
+    @Html.DropDownListFor(x => x.musteriid, (List<SelectListItem>)ViewBag.musteriList, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.fiyat, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-dark">Satis Ekle</button>
+}
+
+

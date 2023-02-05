@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MvcStock.Models.Entity.TblUrunler
+<h2>Yeni Urun Ekleme</h2>
+@using (Html.BeginForm("YeniUrun", "Urun", FormMethod.Post))
+{
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Marka")
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stok")
+    @Html.TextBoxFor(x => x.stock, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alış Fiyat")
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("Satış Fiyat")
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.kategoriId, (List<SelectListItem>)ViewBag.kategroiList, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-dark">Urun Ekle</button>
+}
+

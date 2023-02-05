@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbMvcStockModelStoreContainer" CdmEntityContainer="DbMvcStockEntities">
+    <EntitySetMapping Name="TblKategori">
+      <EntityTypeMapping TypeName="DbMvcStockModel.TblKategori">
+        <MappingFragment StoreEntitySet="TblKategori">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMusteri">
+      <EntityTypeMapping TypeName="DbMvcStockModel.TblMusteri">
+        <MappingFragment StoreEntitySet="TblMusteri">
+          <ScalarProperty Name="durum" ColumnName="durum" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="bakiye" ColumnName="bakiye" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPersonel">
+      <EntityTypeMapping TypeName="DbMvcStockModel.TblPersonel">
+        <MappingFragment StoreEntitySet="TblPersonel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="departman" ColumnName="departman" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblSatis">
+      <EntityTypeMapping TypeName="DbMvcStockModel.TblSatis">
+        <MappingFragment StoreEntitySet="TblSatis">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="urunid" ColumnName="urunid" />
+          <ScalarProperty Name="personelid" ColumnName="personelid" />
+          <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUrunler">
+      <EntityTypeMapping TypeName="DbMvcStockModel.TblUrunler">
+        <MappingFragment StoreEntitySet="TblUrunler">
+          <ScalarProperty Name="durum" ColumnName="durum" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="marka" ColumnName="marka" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="alisfiyat" ColumnName="alisfiyat" />
+          <ScalarProperty Name="satisfiyat" ColumnName="satisfiyat" />
+          <ScalarProperty Name="kategoriId" ColumnName="kategoriId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAdmin">
+      <EntityTypeMapping TypeName="DbMvcStockModel.TblAdmin">
+        <MappingFragment StoreEntitySet="TblAdmin">
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

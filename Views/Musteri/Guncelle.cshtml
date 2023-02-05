@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MvcStock.Models.Entity.TblMusteri
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.soyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şehir")
+    @Html.TextBoxFor(x => x.sehir, new { @class = "form-control" })
+    <br />
+    @Html.Label("Bakiye")
+    @Html.TextBoxFor(x => x.bakiye, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-dark">Müşteri Guncelle</button>
+}
+

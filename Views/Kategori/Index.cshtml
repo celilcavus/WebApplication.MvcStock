@@ -1,0 +1,31 @@
+﻿@using MvcStock.Models.Entity
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<TblKategori>
+
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>KATEGORI ADI</th>
+                <th>SIL</th>
+                <th>GUNCELLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.ad</td>
+                    <td><a href="/Kategori/Sil/@item.Id" class="btn btn-sm btn-danger">Sil</a></td>
+                    <td><a href="/Kategori/Guncelle/@item.Id" class="btn btn-sm btn-warning">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Kategori/YeniKategori" class="btn btn-info text-light">Yeni Kategori</a>

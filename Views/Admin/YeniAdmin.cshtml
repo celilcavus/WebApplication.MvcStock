@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "YeniAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MvcStock.Models.Entity.TblAdmin
+@using (Html.BeginForm("YeniAdmin", "Admin", FormMethod.Post))
+{
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.kullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.sifre, new { @class = "form-control", @type="password"})
+    <br />
+    <button type="submit" class="btn btn-dark">Kaydet</button>
+}
